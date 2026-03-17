@@ -1,0 +1,25 @@
+{
+  "name": "regwatch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean:reports": "rm -rf cypress/reports",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "cypress:run:ai": "npm run clean:reports && cypress run && npx testaignite report:full"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@types/node": "^25.3.3",
+    "cypress": "^15.11.0",
+    "cypress-mochawesome-reporter": "^4.0.2",
+    "testaignite-reporter": "github:sphinx010/testAignite_",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
