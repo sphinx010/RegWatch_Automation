@@ -1,6 +1,6 @@
 # RegWatch: Agentic Regulatory Intelligence & Compliance Assurance Framework
 
-RegWatch is an industry-grade, AI-driven regulatory intelligence platform designed to automate the discovery, classification, and monitoring of compliance obligations within the Nigerian financial ecosystem. By leveraging a specialized "QA Swarm" of autonomous agents, RegWatch ensures deterministic reliability across complex, non-deterministic AI workflows.
+RegWatch is an industry-grade, AI-driven regulatory intelligence platform designed to automate the discovery, classification, and monitoring of compliance obligations within the Nigerian financial ecosystem. 
 
 ---
 
