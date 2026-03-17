@@ -34,17 +34,6 @@ All tests are mapped directly to the **Requirement Traceability Matrix (RTM)** u
 
 ---
 
-## 3. The "QA Swarm": Specialized AI Orchestration
-
-The framework is governed by four distinct AI agent personas, each operating within a narrow, machine-readable specification.
-
--   **`@QA-Detective` (The BDD Explorer)**: Performs visible browser exploration, captures DOM evidence, and scaffolds the behavioral Gherkin suite.
--   **`@QA-Lead` (The Omnibus Architect)**: Principal-level engineer responsible for TDD facilitation, global interception strategies, and high-level risk management.
--   **`@QA-Automation-Agent` (The Implementer)**: A certified test developer who mass-produces Cypress `.cy.ts` files based on approved BDD specs.
--   **`@QA-Grader` (The Compliance Firewall)**: A utility agent that utilizes Chain-of-Thought reasoning to certify that automation code adheres to safety and performance invariants.
-
----
-
 ## 4. Engineering Determinism & Pipeline Stability
 
 To handle the inherent non-determinism of LLM-backed services and third-party webhooks, RegWatch employs several advanced engineering patterns:
