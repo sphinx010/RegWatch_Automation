@@ -1,6 +1,6 @@
-import { defineConfig } from 'cypress';
+const { defineConfig } = require('cypress');
 
-export default defineConfig({
+module.exports = defineConfig({
   reporter: 'cypress-mochawesome-reporter',
   reporterOptions: {
     reportDir: 'cypress/reports',
@@ -12,13 +12,14 @@ export default defineConfig({
     setupNodeEvents(on, config) {
       require('cypress-mochawesome-reporter/plugin')(on);
     },
-    baseUrl: 'https://regtech365-ecosystem-fe-qa.salmonbush-5bbd955b.eastus.azurecontainerapps.io',
+    baseUrl: 'https://reg-watch-client-staging.gentlemeadow-8588bc06.eastus.azurecontainerapps.io',
     viewportWidth: 1280,
     viewportHeight: 720,
     video: false,
     screenshotOnRunFailure: true,
     pageLoadTimeout: 60000,
-    defaultCommandTimeout: 10000,
-    requestTimeout: 15000,
+    defaultCommandTimeout: 30000,
+    requestTimeout: 30000,
+    chromeWebSecurity: false,
   },
 });

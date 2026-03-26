@@ -1,6 +1,50 @@
 {
-    "Onboarding": {},
-    "Dashboard": {},
-    "Assessments": {},
+    "Onboarding": {
+        "firstNameInput": "input#firstName",
+        "lastNameInput": "input#lastName",
+        "emailInput": "input#email",
+        "passwordInput": "input#password",
+        "confirmPasswordInput": "input#confirmPassword",
+        "submitBtn": "button:contains(\"Create Account\")",
+        "validationError": "input:invalid"
+    },
+    "Dashboard": {
+        "reassessBtn": "button:contains(\"Reassess\")",
+        "overallComplianceCard": ".bg-card:contains(\"Overall Compliance\")",
+        "totalRegulationsCard": "span:contains(\"Regulations\")",
+        "highRiskCard": "span:contains(\"High Risk\")",
+        "activeAssessmentsCard": "span:contains(\"Active Assessments\")",
+        "compliantItemsCard": "span:contains(\"Compliant Items\")"
+    },
+    "Regulations": {
+        "searchBar": "input[placeholder=\"Search by title or circular number\"]",
+        "regulatorFilter": "select:nth-of-type(1)",
+        "riskFilter": "select:nth-of-type(2)",
+        "statusFilter": "select:nth-of-type(4)",
+        "emptyStateMsg": "div:contains(\"No regulations found m\")",
+        "regulationCard": "div.grid > div.border.rounded-lg"
+    },
+    "AICopilot": {
+        "chatInput": "input[placeholder*=\"Describe your business\"]",
+        "sendBtn": "button:has(svg).bg-indigo-100"
+    },
+    "Settings": {
+        "teamAccessTab": "button:contains(\"Team Access\")"
+    },
+    "Notifications": {
+        "markAllReadBtn": "button:contains(\"Mark all as read\")",
+        "allTab": "button:contains(\"All\")",
+        "unreadTab": "button:contains(\"Unread\")",
+        "archivedTab": "button:contains(\"Archived\")"
+    },
+    "Assessments": {
+        "viewButton": "button:contains(\"View\")",
+        "startPreAssessmentBtn": "button:contains(\"Start Pre-Assessment\")",
+        "radioBtnYes": "input[type=\"radio\"][value=\"yes\"], input[type=\"radio\"].accent-blue-900",
+        "submitAssessmentBtn": "button:contains(\"Submit Assessment\")",
+        "confirmSubmitModalBtn": "div[role=\"dialog\"] button:contains(\"Submit Assessment\")",
+        "overallScore": "div:contains(\"100%\")",
+        "successBanner": "div:contains(\"Assessment Successfully Analyzed\")"
+    },
     "Global": {}
 }

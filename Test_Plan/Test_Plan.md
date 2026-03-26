@@ -89,5 +89,5 @@ https://regtech365-ecosystem-fe-qa.salmonbush-5bbd955b.eastus.azurecontainerapps
 
 | Environment | Purpose | Core APIs & Endpoints | Test Accounts |
 | :--- | :--- | :--- | :--- |
-| **QA & Automation** | Stable automation testing target | Frontend: `https://regtech365-ecosystem-fe-qa.salmonbush-5bbd955b.eastus.azurecontainerapps.io/login` | `Email: fairtrust@mailinator.com` <br> PW: `AlphaSecure!789` |
-| **Staging** | Pre-production validation | Frontend: `https://regtech365-ecosystem-fe-qa.salmonbush-5bbd955b.eastus.azurecontainerapps.io/login` | `Email: fairtrust@mailinator.com` <br> PW: `AlphaSecure!789` |
+| **QA & Automation** | Stable automation testing target | Frontend: `https://reg-watch-client-staging.gentlemeadow-8588bc06.eastus.azurecontainerapps.io/sign-in` | `Email: automation123@tester.co.uk` <br> PW: `08057606@26` |
+| **Staging** | Pre-production validation | Frontend: `https://reg-watch-client-staging.gentlemeadow-8588bc06.eastus.azurecontainerapps.io/sign-in` | `Email: automation123@tester.co.uk` <br> PW: `08057606@26` |
