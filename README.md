@@ -1,6 +1,6 @@
 # RegWatch: Agentic Regulatory Intelligence & Compliance Assurance Framework
 
-RegWatch is an industry-grade, AI-driven regulatory intelligence platform designed to automate the discovery, classification, and monitoring of compliance obligations within the Nigerian financial ecosystem. By leveraging a specialized "QA Swarm" of autonomous agents, RegWatch ensures deterministic reliability across complex, non-deterministic AI workflows.
+RegWatch is an industry-grade, AI-driven regulatory intelligence platform designed to automate the discovery, classification, and monitoring of compliance obligations within the Nigerian financial ecosystem. 
 
 ---
 
@@ -31,17 +31,6 @@ Functional prioritization is driven by a deep-level **Business-Classed Risk Matr
 -   **Tier 3 (Operational - P3)**: Supporting flows (e.g., Activity Logs, Reporting).
 
 All tests are mapped directly to the **Requirement Traceability Matrix (RTM)** using unique `REG-XXX` identifiers, providing a continuous audit trail from requirement to verification.
-
----
-
-## 3. The "QA Swarm": Specialized AI Orchestration
-
-The framework is governed by four distinct AI agent personas, each operating within a narrow, machine-readable specification.
-
--   **`@QA-Detective` (The BDD Explorer)**: Performs visible browser exploration, captures DOM evidence, and scaffolds the behavioral Gherkin suite.
--   **`@QA-Lead` (The Omnibus Architect)**: Principal-level engineer responsible for TDD facilitation, global interception strategies, and high-level risk management.
--   **`@QA-Automation-Agent` (The Implementer)**: A certified test developer who mass-produces Cypress `.cy.ts` files based on approved BDD specs.
--   **`@QA-Grader` (The Compliance Firewall)**: A utility agent that utilizes Chain-of-Thought reasoning to certify that automation code adheres to safety and performance invariants.
 
 ---
 
