@@ -5,11 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "clean:reports": "npx rimraf cypress/reports",
+    "clean:reports": "rm -rf cypress/reports",
     "cypress:open": "cypress open",
-    "cypress:run": "npm run clean:reports && cypress run",
-    "cypress:run:full": "npm run clean:reports && npx cypress run && npx testaignite report:full",
-    "generate:html": "npx mochawesome-merge cypress/reports/.jsons/*.json > cypress/reports/merged-report.json && npx marge cypress/reports/merged-report.json -o cypress/reports/html"
+    "cypress:run": "cypress run",
+    "cypress:run:ai": "npm run clean:reports && cypress run && npx testaignite report:full"
   },
   "keywords": [],
   "author": "",

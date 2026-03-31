@@ -24,15 +24,11 @@ jobs:
         run: npm ci
 
       - name: Cypress Run & AI Enrichment
-        run: npm run cypress:run:full
+        run: npm run cypress:run:ai
         env:
-          CYPRESS_email: ${{ secrets.REGWATCH_EMAIL }}
-          CYPRESS_password: ${{ secrets.REGWATCH_PASSWORD }}
-          HUGGINGFACE_API_TOKEN: ${{ secrets.HUGGINGFACE_API_TOKEN }}
-
-      - name: Generate Combined HTML Report
-        if: always()
-        run: npm run generate:html
+          CYPRESS_REGWATCH_EMAIL: ${{ secrets.REGWATCH_EMAIL }}
+          CYPRESS_REGWATCH_PASSWORD: ${{ secrets.REGWATCH_PASSWORD }}
+          CYPRESS_HUGGINGFACE_API_TOKEN: ${{ secrets.HUGGINGFACE_API_TOKEN }}
 
       - name: Upload Test Artifacts
         if: always()
