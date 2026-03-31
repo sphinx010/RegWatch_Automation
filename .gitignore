@@ -136,3 +136,6 @@ cypress/reports/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Secrets
+cypress.env.json

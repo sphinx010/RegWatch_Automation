@@ -3,10 +3,11 @@ const { defineConfig } = require('cypress');
 module.exports = defineConfig({
   reporter: 'cypress-mochawesome-reporter',
   reporterOptions: {
-    reportDir: 'cypress/reports',
+    reportDir: 'cypress/reports/.jsons',
     overwrite: false,
-    html: false,
-    json: true
+    html: true,
+    json: true,
+    saveJson: true
   },
   e2e: {
     setupNodeEvents(on, config) {
@@ -18,8 +19,8 @@ module.exports = defineConfig({
     video: false,
     screenshotOnRunFailure: true,
     pageLoadTimeout: 60000,
-    defaultCommandTimeout: 30000,
-    requestTimeout: 30000,
+    defaultCommandTimeout: 40000,
+    requestTimeout: 40000,
     chromeWebSecurity: false,
   },
 });

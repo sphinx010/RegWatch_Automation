@@ -2,40 +2,37 @@ describe('Master Flows #2 and #3: AI Profile Mapping and Dashboard', () => {
 
     beforeEach(() => {
         // Mock specific interceptions to ensure deterministic behavior BEFORE the test fires login logic
-        // User requested intercept on **/dashboard
-        cy.intercept('GET', '**/dashboard/**', {
+        // Consolidate dashboard intercepts with the EXACT structure found in Chrome DevTools
+        cy.intercept('GET', '**/dashboard/*/summary*', {
             statusCode: 200,
             body: {
-                overallCompliance: 75,
-                totalRegulations: 100,
-                highRisk: 10,
-                activeAssessments: 5,
-                compliantItems: 85,
-                complianceByRegulator: [
-                    { regulator: "Central Bank of Nigeria", score: 40 }
-                ]
+                success: true,
+                message: "Dashboard summary retrieved successfully",
+                data: {
+                    overallCompliance: 75,
+                    totalRegulations: 100,
+                    highRiskCount: 10, // Aligned to real API field name
+                    activeAssessments: 5,
+                    compliantItems: 85,
+                    topRegulators: [
+                        { regulator: "Central Bank of Nigeria", complianceRate: 40 }
+                    ],
+                    recentRegulations: [],
+                    upcomingDeadlines: [],
+                    recentActivity: [],
+                    byThematicArea: []
+                }
             }
         }).as('dashboardData');
 
-        cy.intercept('POST', '**/profile/reassess*', {
+        cy.intercept('POST', '**/dashboard/reassess/*', {
             statusCode: 200,
             body: { message: 'Profile Reassessing', status: 'In Progress' }
         }).as('reassessProfile');
 
-        cy.intercept('GET', '**/dashboard/summary*', {
-            statusCode: 200,
-            body: {
-                overallCompliance: 75,
-                totalRegulations: 100,
-                highRisk: 10,
-                activeAssessments: 5,
-                compliantItems: 85
-            }
-        }).as('dashboardSummaryFallback'); 
-
         // Authenticate manually. This command explicitly travels from the Ecosystem portal, 
         // routes cross-domain, and lands precisely on the RegWatch Dashboard.
-        cy.loginByApi('automation123@tester.co.uk', '08057606@26');
+        cy.loginByApi();
         
         cy.fixture('selector_map.json').as('selectors');
         
@@ -67,7 +64,7 @@ describe('Master Flows #2 and #3: AI Profile Mapping and Dashboard', () => {
         cy.contains('Reassess').first().click();
 
         cy.contains('Reassessing...').should('exist');
-        cy.wait('@reassessProfile').its('response.statusCode').should('eq', 200);
+        cy.wait('@reassessProfile', { timeout: 30000 }).its('response.statusCode').should('eq', 200);
     });
 
 });

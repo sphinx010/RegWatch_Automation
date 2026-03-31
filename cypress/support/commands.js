@@ -3,13 +3,16 @@
 // ***********************************************
 
 Cypress.Commands.add('loginByApi', (email, password) => {
-    // Stripped cy.session to ensure 100% deterministic cross-domain token passage in Staging
+    // Priority: Command arguments > Environment Variables > Default Constants
+    const userEmail = email || Cypress.env('REGWATCH_EMAIL') || 'automation123@tester.co.uk';
+    const userPassword = password || Cypress.env('REGWATCH_PASSWORD') || 'REDACTED_PASSWORD';
+
     const ecosystemUrl = 'https://regtech365-ecosystem-fe-staging.gentlemeadow-8588bc06.eastus.azurecontainerapps.io';
-    cy.visit(ecosystemUrl + '/login');
+    cy.visit(ecosystemUrl + '/sign-in');
     
     // Robust selector handling for Auth inputs
-    cy.get('input#email, input[placeholder="Enter your email"], input[type="email"]').should('be.visible').clear().type(email);
-    cy.get('input#password, input[placeholder="Enter your password"], input[type="password"]').clear().type(password);
+    cy.get('input#email, input[placeholder="Enter your email"], input[type="email"]').should('be.visible').clear().type(userEmail);
+    cy.get('input#password, input[placeholder="Enter your password"], input[type="password"]').clear().type(userPassword);
     cy.get('button').contains('Log In').click();
     
     // Safely wait for Ecosystem authentication resolution

@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "clean:reports": "rm -rf cypress/reports",
+    "clean:reports": "npx rimraf cypress/reports",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run",
-    "cypress:run:ai": "npm run clean:reports && cypress run && npx testaignite report:full"
+    "cypress:run": "npm run clean:reports && cypress run",
+    "cypress:run:full": "npm run clean:reports && npx cypress run && npx testaignite report:full",
+    "generate:html": "npx mochawesome-merge cypress/reports/.jsons/*.json > cypress/reports/merged-report.json && npx marge cypress/reports/merged-report.json -o cypress/reports/html"
   },
   "keywords": [],
   "author": "",
@@ -16,7 +17,7 @@
   "type": "commonjs",
   "devDependencies": {
     "@types/node": "^25.3.3",
-    "cypress": "^15.11.0",
+    "cypress": "^15.13.0",
     "cypress-mochawesome-reporter": "^4.0.2",
     "testaignite-reporter": "github:sphinx010/testAignite_",
     "ts-node": "^10.9.2",
