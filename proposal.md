@@ -1,7 +1,7 @@
 # Proposal: RegStep 365 Ecosystem Automation Strategy
 
 ## 1. Executive Summary
-This proposal outlines a unified, production-grade automation strategy for the **RegStep 365** platform ecosystem (including RegWatch, RegComply, and subsequent modules). By leveraging a **BDD-First** methodology and **Agenteric QA** (AI-driven automation), we aim to achieve 100% coverage of critical user journeys with zero flakiness and high maintenance efficiency.
+This proposal outlines a unified, production-grade automation strategy for the **RegTech 365** platform ecosystem (including RegWatch, RegComply, and subsequent modules). By leveraging a **BDD-First** methodology and **Agenteric QA** (AI-driven automation), we aim to achieve 100% coverage of critical user journeys with zero flakiness and high maintenance efficiency.
 
 ## 2. Strategic Methodology: BDD-First + Agenteric QA
 The core of our approach is the synergy between human-defined behavioral specifications and AI-driven implementation.
@@ -25,7 +25,7 @@ Automation is built directly upon this documentation foundation:
 4.  **Traceability**: Each scenario is mapped to an **RTM code** for compliance tracking.
 
 ### 2.4 Agenteric QA (The @QA-Automation-Agent)
-We utilize a specialized AI agent configured for the RegStep 365 ecosystem.
+We utilize a specialized AI agent configured for the RegTech 365 ecosystem.
 -   **Identity & Role**: An E2E Automation Engineer that explores the UI, gathers DOM selectors, and writes deterministic Cypress scripts.
 -   **Strict Workflow**:
     -   **Detective Phase**: Exploration of the live UI to verify selectors against the Functional PRD.
@@ -40,7 +40,7 @@ To ensure reliability in an AI-driven environment, our automation follows these 
 -   **Unified Selector Management**: All DOM locators are centralized in `cypress/fixtures/selector_map.json` to prevent duplication and facilitate easy updates.
 -   **State Isolation**: Use of `cy.request()` for high-speed authentication and state setup, bypassing slow UI login flows.
 
-## 4. Scalability for RegStep 365
+## 4. Scalability for RegTech 365
 The strategy is designed to scale across the entire 365 ecosystem:
 -   **Modular Test Suites**: Shared automation utilities and custom commands across all platforms.
 -   **Unified Reporting**: Integration with `testAignite` for AI-enhanced failure analysis (Llama-3/Mixtral) and visual proof of work.
@@ -48,7 +48,7 @@ The strategy is designed to scale across the entire 365 ecosystem:
 
 ## 5. Implementation Roadmap
 1.  **Foundation**: Centralize all platform PRDs/TRDs.
-2.  **Scenario Mapping**: Draft all Gherkin Test Cases for RegStep 365 modules.
+2.  **Scenario Mapping**: Draft all Gherkin Test Cases for RegTech 365 modules.
 3.  **Agentic Scaffolding**: Onboard the `@QA-Automation-Agent` to all repositories.
 4.  **Full Automation**: Iterative rollout of P1 -> P2 flows.
 
